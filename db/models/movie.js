@@ -44,7 +44,7 @@ module.exports = (sequelize) => {
           msg: "Please provide a value for 'releaseDate'",
         },
         isAfter: {
-          args: "1895-12-3-27",
+          args: "1895-12-27",
           msg: "Please provide a value on or after '1895-12-28' for 'releaseDate'",
         },
       },
@@ -59,7 +59,10 @@ module.exports = (sequelize) => {
         },
       },
     },
-  }, { sequelize }); // same as { sequelize: sequelize }
+  }, { 
+    paranoid: true, // enable "soft" deletes
+    sequelize 
+  }); // same as { sequelize: sequelize }
 
   return Movie;
 };

@@ -15,5 +15,6 @@ const db = {
 
 // exports the db object which holds the Sequelize and database configs and the models
 db.models.Movie = require('./models/movie.js')(sequelize);
+db.models.Person = require('./models/person.js')(sequelize);
 
 module.exports = db;
